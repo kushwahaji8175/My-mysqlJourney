@@ -1,0 +1,64 @@
+What is MySQL?
+
+MySQL is a relational database management system
+MySQL is open-source
+MySQL is free
+MySQL is ideal for both small and large applications
+MySQL is very fast, reliable, scalable, and easy to use
+MySQL is cross-platform
+MySQL is compliant with the ANSI SQL standard
+MySQL was first released in 1995
+MySQL is developed, distributed, and supported by Oracle Corporation
+MySQL is named after co-founder Monty Widenius's daughter: My
+
+MySQL Data Types:In MySQL there are three main data types: 
+1. String
+2. Numeric
+3. Date
+
+1.String: This data type is used to hold string type data. for string, there are some type which are
+ as follows
+
+a. CHAR(size):	A FIXED length string (can contain letters, numbers, and special characters). 
+The size parameter specifies the column length in characters - can be from 0 to 255. Default is 1.
+
+b.VARCHAR(size)	A VARIABLE length string (can contain letters, numbers, and special characters). 
+The size parameter specifies the maximum column length in characters - can be from 0 to 65535.
+
+c.TEXT(size):	Holds a string with a maximum length of 65,535 bytes.
+
+there are more types for string but these three used most commonly.
+
+2.Numeric: This data type is used to hold numeric type data. for Numeric there are some type which are
+ as follows.
+
+ a.BIT(size):	A bit-value type. The number of bits per value is specified in size. The size 
+ parameter can hold a value from 1 to 64. The default value for size is 1.
+
+ b.BOOL:	Zero is considered as false, nonzero values are considered as true.
+
+ c.INT(size):	A medium integer. Signed range is from -2147483648 to 2147483647. Unsigned range
+  is from 0 to 4294967295. The size parameter specifies the maximum display width (which is 255).
+
+ d.INTEGER(size):	Equal to INT(size).
+
+ e.BIGINT(size)	A large integer. Signed range is from -9223372036854775808 to 9223372036854775807.
+   Unsigned range is from 0 to 18446744073709551615. The size parameter specifies the maximum display
+    width (which is 255).
+
+ f:FLOAT(p)	A floating point number. MySQL uses the p value to determine whether to use FLOAT
+     or DOUBLE for the resulting data type. If p is from 0 to 24, the data type becomes FLOAT().
+      If p is from 25 to 53, the data type becomes DOUBLE().
+ 
+ 3.Date: This data type is used to hold date type value.for Date there are some type which are
+  as follows.
+
+  a.DATE:	A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'.
+
+  b.DATETIME(fsp)	A date and time combination. Format: YYYY-MM-DD hh:mm:ss. The supported range
+   is from '1000-01-01 00:00:00' to '9999-12-31 23:59:59'. Adding DEFAULT and ON UPDATE in the
+    column definition to get automatic initialization and updating to the current date and time.
+
+  c.TIMESTAMP(fsp):	A timestamp. TIMESTAMP values are stored as the number of seconds since the
+   Unix epoch ('1970-01-01 00:00:00' UTC). Format: YYYY-MM-DD hh:mm:ss. The supported range is 
+   from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC. Automatic initialization and updating to the current date and time can be specified using DEFAULT CURRENT_TIMESTAMP and ON UPDATE CURRENT_TIMESTAMP in the column definition
