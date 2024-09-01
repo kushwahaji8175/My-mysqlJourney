@@ -1,0 +1,113 @@
+Types Of Mysql Commands:Sql command can be categories as follows.
+1. DDL Commands.
+2. DML Commands.
+3. DCL Commands.
+4. TCL Commands.
+
+1.DDL(Data Defenition Language ) Command:DDL is a set of SQL commands used to create, modify, 
+and delete database structures but not data.
+
+Here are all the main DDL (Data Definition Language) commands along with their syntax:
+
+a. CREATE:	Create database or its objects (table, index, function, 
+views, store procedure, and triggers).
+
+syntax: CREATE TABLE table_name
+ (column1 data_type, 
+ column2 data_type, ...
+ column n data_type);
+
+ ex:  create table person
+    ( person_name varchar(30),
+     person_email varchar(30),
+     primary key(person_email));
+
+    output:Query OK, 0 rows affected (0.04 sec);
+
+    peson table created like show below.
+
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| person_name  | varchar(30) | YES  |     | NULL    |       |
+| person_email | varchar(30) | NO   | PRI | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+b. ALTER:	Alter the structure of the database. There are several way to alter a table which
+are as follows.
+
+i. Adding a new column: we can add a new column in a existing table.
+
+syntax:ALTER TABLE table_name 
+ADD COLUMN column_name data_type;
+
+ex: alter table person
+     add person_id int,
+     add person_dsg varchar(50);
+
+     after executing this query person table looks like as follows.
+     
+
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| person_name  | varchar(30) | YES  |     | NULL    |       |
+| person_email | varchar(30) | NO   | PRI | NULL    |       |
+| person_id    | int         | YES  |     | NULL    |       |
+| person_dsg   | varchar(50) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+ii.By Adding Constraint:we can add a new constraint like pimary key, unique,not null in a
+existing table.
+
+syntax: AlTER TABLE table_name
+        add constraint constraint_name(column1,column2...column);
+
+        ex:alter table person
+        add constraint unique(person_id);
+        after executing this query in person table looks like as follows.
+        
+    
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| person_name  | varchar(30) | YES  |     | NULL    |       |
+| person_email | varchar(30) | NO   | PRI | NULL    |       |
+| person_id    | int         | YES  | UNI | NULL    |       |
+| person_dsg   | varchar(50) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+iii. By Deleting a column: we can alter a table by deleting a column.
+
+        syntax:  ALTER TABLE table_name
+                 DROP COLUMN column_name;
+
+        ex: ALTER TABLE person
+            DROP COLUMN person_dsg;
+
+            after executing this query person table looks like as follows.
+
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| person_name  | varchar(30) | YES  |     | NULL    |       |
+| person_email | varchar(30) | NO   | PRI | NULL    |       |
+| person_id    | int         | YES  | UNI | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+
+c. DROP:	Delete objects from the database.
+
+    syntax:DROP TABLE table_name;
+
+d.TRUNCATE: Remove all records from a table, including all spaces allocated 
+for the records are removed.
+    syntax: TRUNCATE TABLE table_name;
+
+e. RENAME:Rename an object existing in the database.
+
+    syntax:RENAME TABLE old_table_name TO new_table_name;
+
+    ex: RENAME TABLE person to persons;
+
+    after executing this query person table name has been changed to pesons,
+
