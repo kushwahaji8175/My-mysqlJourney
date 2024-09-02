@@ -1,0 +1,105 @@
+2.DML(Data Manipulation Language) Commands:Dml commands are used to access data and manipulate data.
+The DML commands are as folows.
+a.Insert.
+b.Select.
+c.Update.
+d.Delete.
+
+a.Insert: Insert command is used to insert data into tables.
+
+syntax1: insert into <table_name>
+    values
+    (value1,value2,value3,value4... ,valuen),
+    (value1,value2,value3,value4... ,valuen),
+    (value1,value2,value3,value4... ,valuen),
+    .
+    .
+    .
+    (value1,value2,value3,value4... ,valuen);
+
+    syntax2:insert into <table_name>(column1,colum2....,column)
+    values
+    (value1,value2....,valuen),
+    (value1,value2....,valuen),
+    .
+    .
+    .
+    .
+    (value1,value2....,valuen);
+
+    ex: insert into persons
+    values
+     ("Vishal","vishal@123",1),
+     ("Aryan","aryan@123",2);
+
+     after executing this query two row will be inserted into persons table.
+
++-------------+--------------+-----------+
+| person_name | person_email | person_id |
++-------------+--------------+-----------+
+| Aryan       | aryan@123    |         2 |
+| Vishal      | vishal@123   |         1 |
++-------------+--------------+-----------+
+
+b.Select:Select command is used to select data from table.
+
+syntax1: select*from <table_name>;
+
+syntax2:select (column1,column2....column n) from <table_name>;
+
+ex1:select*from persons;
+
+ after executing this query all rows will be selected from persons table.
+
++-------------+--------------+-----------+
+| person_name | person_email | person_id |
++-------------+--------------+-----------+
+| Aryan       | aryan@123    |         2 |
+| Vishal      | vishal@123   |         1 |
++-------------+--------------+-----------+
+
+ex2: select peson_email,person_id from persons;
+
+after executing this query all values of column peson_email,person_id will be selected;
+
++--------------+-----------+
+| person_email | person_id |
++--------------+-----------+
+| vishal@123   |         1 |
+| aryan@123    |         2 |
++--------------+-----------+
+
+c.Update:Update command is used to update the value of row.
+
+Syntax: update <table_name>
+        set column1_name=value,column2_name2...
+        where condition;
+
+ex:  update persons
+     set person_name="Sanjana",person_email="sanjana@gmail.com" where person_id=1;
+
+    after executing this query person_name and person_email will be updated where id is 1;
+
++-------------+-------------------+-----------+
+| person_name | person_email      | person_id |
++-------------+-------------------+-----------+
+| Aryan       | aryan@123         |         2 |
+| Sanjana     | sanjana@gmail.com |         1 |
++-------------+-------------------+-----------+
+
+d.Delete: Delete Command is used to delete rows from the table.
+
+syntax: delete from <table_name> where condition;
+
+    after executing this query specified row will be deleted from the table.
+
+    ex:delete from persons where person_id=2;
+
+    after executing this query the row will be deleted where person_id is 2.
+    
++-------------+-------------------+-----------+
+| person_name | person_email      | person_id |
++-------------+-------------------+-----------+
+| Sanjana     | sanjana@gmail.com |         1 |
++-------------+-------------------+-----------+ 
+
